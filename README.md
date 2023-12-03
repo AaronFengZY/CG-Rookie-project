@@ -1,5 +1,5 @@
-# CGRookie-project-
-This is the complete project of XJTU COMP551805(Computer Graphic), which includes rendering, geometry, and physical simulations. 
+# Computer Graphic Rookie project
+This is the complete project (i.e means you can get a perfect score) of XJTU COMP551805(Computer Graphic), which includes rendering, geometry, and physical simulations. 
 
 <img src="./实验依赖关系图.png" width="400" />
 

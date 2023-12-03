@@ -9,6 +9,8 @@ This is the complete project of XJTU COMP551805(Computer Graphic), which include
 ### 2.2 软渲染器：局部光照
 ### 2.7 基于半边的局部操作
 ### 2.12 前向欧拉法模拟运动
-### 2.13 其他方法解刚体运动  <br>
+### 2.13 其他方法解刚体运动
 
-具体的实验内容均可以在实验文档中找到
+<br>
+具体的实验内容均可以在实验文档中找到<br><br>
+实验环境: dandelion （已fork）

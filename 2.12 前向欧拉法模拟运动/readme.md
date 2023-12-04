@@ -1,9 +1,19 @@
-主要是为了解决欧拉角旋转的弊端：万向锁的问题，实验文档有说明。
+# 这份代码是用前向欧拉法模拟运动
 
-这边的代码进行了一个简单的拆分：
+模拟的方式也十分简单，就是简单的近似：
 
-1. 先获得当前四元数旋转 `q`
-2. 获得x, y, z的四元数 `(qx, qy, qz)`（注意：这边是相对于原始角度的改变）
-3. 更新物体最终的旋转 `q * qx * qy * qz`
+实现在 `simulation/solver.cpp` 中的 `forward_euler_step` 函数。
 
-代码中也有相应注释
+$$
+x_{k+1} = x_k + v\Delta t
+$$
+
+$$
+v_{k+1} = v_k + a\Delta t
+$$
+
+
+另外要注意的就是 `Scene/scene.cpp` 中的 `Scene::simulation_update` 函数。这个函数中主要做的工作是更新 `last_update` 时间。注意：这里我们从 `elapsed_time` 中减去 `remaining_time` 来获得实际上模拟过的时间：
+
+```cpp
+last_update = last_update + std::chrono::duration_cast<std::chrono::steady_clock::duration>(elapsed_time - remaining_time);
